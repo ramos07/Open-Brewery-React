@@ -10,6 +10,10 @@ input {
     border-radius: 10px !important;
 }
 
+.modal-content {
+    background: #fae96f !important;
+}
+
 .results-container {
     background: #fae96f;
     padding: 1em 0px;
@@ -38,6 +42,13 @@ input {
     flex-direction: column;
     justify-content: center;
     align-items: center;
+}
+
+.list-item-title {
+    display: flex;
+    flex-direction: row;
+    column-gap: 0.5em;
+    align-items: baseline;
 }
 
 .list-item:hover {

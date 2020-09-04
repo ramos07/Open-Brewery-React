@@ -32,4 +32,4 @@
 
 ### Credits
 
--   Credits to [Chris J Mears](https://chrisjmears.com/) and [Wandering Leaf Studios LLC](https://wanderingleafstudios.com/) for providing the [Open Brewery DB](https://www.openbrewerydb.org/) that made this possible.
+-   Credits to [Chris J Mears](https://chrisjmears.com/) and [Wandering Leaf Studios LLC](https://wanderingleafstudios.com/) for providing the [Open Brewery DB API](https://www.openbrewerydb.org/) that made this possible.

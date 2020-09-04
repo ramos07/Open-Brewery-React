@@ -1,6 +1,9 @@
-// Modals that shows the details of each brewery
+// Modal that shows the details of each brewery
 import React from "react";
+import { EmojioneV4 } from "react-emoji-render";
 
+// Function that formats phone number string from
+// 1234567890 => (123) 456-7890
 const formatNumber = (phoneStr) => {
     let cleaned = ("", phoneStr).replace(/\D/g, "");
 
@@ -14,6 +17,17 @@ const formatNumber = (phoneStr) => {
 };
 
 const Details = ({ brewery }) => {
+    const breweryAddress =
+        brewery.street +
+        ", " +
+        brewery.city +
+        ", " +
+        brewery.state +
+        " " +
+        brewery.postal_code;
+
+    // console.log(breweryAddress);
+
     return (
         <div>
             <div
@@ -48,17 +62,37 @@ const Details = ({ brewery }) => {
                         </div>
                         <div className='modal-body'>
                             <p>
-                                <i className='fa fa-beer mr-2'></i>
+                                <EmojioneV4
+                                    className='mr-2'
+                                    text=':beer:'
+                                    style={{ fontSize: "1.5em" }}
+                                />
                                 {brewery.brewery_type[0].toUpperCase() +
                                     brewery.brewery_type.slice(1)}
                             </p>
                             <p>
-                                <i className='fas fa-building mr-2'></i>
-                                {brewery.street}
-                                {", " + brewery.city + " " + brewery.state}
+                                <EmojioneV4
+                                    className='mr-2'
+                                    text=':house:'
+                                    style={{ fontSize: "1.5em" }}
+                                />
+                                <a
+                                    href={
+                                        "http://maps.google.com/?q=" +
+                                        breweryAddress
+                                    }
+                                    rel='noopener noreferrer'
+                                    target='_blank'
+                                >
+                                    {breweryAddress}
+                                </a>
                             </p>
                             <p>
-                                <i className='fas fa-phone mr-2'></i>
+                                <EmojioneV4
+                                    className='mr-2'
+                                    text=':phone:'
+                                    style={{ fontSize: "1.5em" }}
+                                />
                                 {brewery.phone ? (
                                     <a
                                         href={
@@ -72,7 +106,11 @@ const Details = ({ brewery }) => {
                                 )}
                             </p>
                             <p>
-                                <i className='fas fa-link mr-2'></i>
+                                <EmojioneV4
+                                    className='mr-2'
+                                    text=':link:'
+                                    style={{ fontSize: "1.5em" }}
+                                />
                                 {brewery.website_url ? (
                                     <a
                                         href={brewery.website_url}
@@ -89,7 +127,7 @@ const Details = ({ brewery }) => {
                         <div className='modal-footer'>
                             <button
                                 type='button'
-                                className='btn btn-secondary'
+                                className='btn btn-danger'
                                 data-dismiss='modal'
                             >
                                 Close

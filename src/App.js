@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import { EmojioneV4 } from "react-emoji-render";
 
 import "./App.css";
 import "bootstrap/dist/css/bootstrap.min.css";
@@ -58,10 +59,22 @@ function App() {
                     data-toggle='modal'
                     data-target={"#detailsModal_" + brewery.id}
                 >
-                    <h3>{brewery.name}</h3>
-                    <p className='lead'>
-                        {brewery.city + ", " + brewery.state}
-                    </p>
+                    <div className='list-item-title'>
+                        <EmojioneV4
+                            style={{ fontSize: "1.5em" }}
+                            text=':beer:'
+                        />
+                        <h3>{brewery.name}</h3>
+                    </div>
+                    <div className='list-item-title'>
+                        <EmojioneV4
+                            style={{ fontSize: "1.5em" }}
+                            text=':round_pushpin:'
+                        />
+                        <p className='lead'>
+                            {brewery.city + ", " + brewery.state}
+                        </p>
+                    </div>
                 </li>
                 <Details brewery={brewery} />
             </>
@@ -72,7 +85,8 @@ function App() {
             <main>
                 <div className='d-flex flex-row justify-content-center align-items-center pt-4'>
                     <h1 className='mt-1'>Open Brewery React</h1>
-                    <i className='fa fa-beer fa-3x ml-3'></i>
+                    {/* <i className='fa fa-beer fa-3x ml-3'></i> */}
+                    <EmojioneV4 style={{ fontSize: "3em" }} text=':beer:' />
                 </div>
                 <p className='text-center my-0'>
                     Search for breweries based off keywords.
@@ -88,7 +102,7 @@ function App() {
                             onChange={(e) => setInput(e.target.value)}
                         />
                         <button
-                            className='btn btn-warning mx-1'
+                            className='btn btn-dark mx-1'
                             type='button'
                             id='button-addon1'
                             data-ripple-color='dark'
@@ -97,7 +111,7 @@ function App() {
                             Search
                         </button>
                         <button
-                            className='btn btn-info'
+                            className='btn btn-danger'
                             type='button'
                             id='button-addon2'
                             data-ripple-color='dark'
@@ -150,7 +164,7 @@ function App() {
                 <div className='d-flex justify-content-center my-0'>
                     <p>View the code for this project on </p>
                     <a
-                        href='https://github.com/ramos07'
+                        href='https://github.com/ramos07/OpenBreweryReactApp'
                         target='_blank'
                         rel='noopener noreferrer'
                     >
