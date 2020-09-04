@@ -1,8 +1,10 @@
 import React, { useState } from "react";
 
 import "./App.css";
-import "mdb-ui-kit/css/mdb.min.css";
-import "mdb-ui-kit/js/mdb.min.js";
+import "bootstrap/dist/css/bootstrap.min.css";
+import "bootstrap/dist/js/bootstrap.min.js";
+import "jquery/dist/jquery.min.js";
+import "popper.js/dist/popper.min.js";
 
 import Details from "./components/Details";
 
