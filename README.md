@@ -22,15 +22,8 @@
 1.  ```bash
     git clone https://github.com/ramos07/OpenBreweryReactApp.git
     ```
-
-
-    ```
-
 2.  ```bash
     npm install
-    ```
-
-
     ```
 
 -   Feel free to add on to this project design wise, feature wise, etc.
