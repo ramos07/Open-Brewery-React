@@ -15,14 +15,24 @@
 
 -   [Open Brewery React App](https://open-brewery-react-app.vercel.app/)
 
+---
+
 ### Want to change it up? :computer:
 
--   ```bash
-      git clone https://github.com/ramos07/OpenBreweryReactApp.git
+1.  ```bash
+    git clone https://github.com/ramos07/OpenBreweryReactApp.git
     ```
--   ```bash
-      npm install
+
+
     ```
+
+2.  ```bash
+    npm install
+    ```
+
+
+    ```
+
 -   Feel free to add on to this project design wise, feature wise, etc.
 
 ---
