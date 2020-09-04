@@ -75,8 +75,20 @@ input {
         padding: 1rem 5%;
     }
 
+    #siteTitle {
+        font-size: 2em !important;
+    }
+
+    .list-item h3 {
+        font-size: 95% !important;
+    }
+    .list-item p {
+        font-size: 95%;
+    }
+
     .results-container {
         position: relative;
+        padding-right: 10%;
         margin: 0 5%;
         height: 70vh;
         overflow-y: scroll;

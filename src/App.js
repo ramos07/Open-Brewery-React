@@ -84,7 +84,9 @@ function App() {
         <>
             <main>
                 <div className='d-flex flex-row justify-content-center align-items-center pt-4'>
-                    <h1 className='mt-1'>Open Brewery React</h1>
+                    <h1 id='siteTitle' className='mt-1'>
+                        Open Brewery React
+                    </h1>
                     {/* <i className='fa fa-beer fa-3x ml-3'></i> */}
                     <EmojioneV4 style={{ fontSize: "3em" }} text=':beer:' />
                 </div>
