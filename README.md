@@ -13,7 +13,7 @@
 
 ### Check it out live :white_check_mark:
 
--   [Open Brewery React App](https://open-brewery-react-app.vercel.app/)
+-   [Open Brewery React App](https://openbrewerydb-react.vercel.app/)
 
 ---
 
