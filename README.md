@@ -2,13 +2,31 @@
 
 ## A React application that uses Open Brewery DB API to search for breweries around the United States based off keywords. :beers:
 
----
-
 ### Tech Stack :wrench:
 
 -   React v16.3.1
--   MDBootstrap 5
+-   Bootstrap 4.5.2
 -   Open Brewery DB API
 -   Vercel
 
-### Want to see it live? :white_check_mark:
+---
+
+### Check it out live :white_check_mark:
+
+## [Open Brewery React App](https://open-brewery-react-app.vercel.app/)
+
+### Want to change it up? :computer:
+
+-   ```bash
+      git clone https://github.com/ramos07/OpenBreweryReactApp.git
+    ```
+-   ```bash
+      npm install
+    ```
+-   Feel free to add on to this project design wise, feature wise, etc.
+
+---
+
+### Credits
+
+-   Credits to [Chris J Mears](https://chrisjmears.com/) and [Wandering Leaf Studios LLC](https://wanderingleafstudios.com/) for providing the [Open Brewery DB](https://www.openbrewerydb.org/) that made this possible.
