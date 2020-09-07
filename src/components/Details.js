@@ -16,6 +16,10 @@ const formatNumber = (phoneStr) => {
     return null;
 };
 
+/**
+ *
+ * @param {object} brewery - The brewery that is selected by the user to view more details.
+ */
 const Details = ({ brewery }) => {
     const breweryAddress =
         brewery.street +
@@ -83,6 +87,7 @@ const Details = ({ brewery }) => {
                                     }
                                     rel='noopener noreferrer'
                                     target='_blank'
+                                    aria-label='Brewery address'
                                 >
                                     {breweryAddress}
                                 </a>
@@ -95,6 +100,7 @@ const Details = ({ brewery }) => {
                                 />
                                 {brewery.phone ? (
                                     <a
+                                        aria-label='Brewery phone number'
                                         href={
                                             "tel:" + formatNumber(brewery.phone)
                                         }
@@ -113,6 +119,7 @@ const Details = ({ brewery }) => {
                                 />
                                 {brewery.website_url ? (
                                     <a
+                                        aria-label='Brewery website'
                                         href={brewery.website_url}
                                         target='_blank'
                                         rel='noreferrer noopener'

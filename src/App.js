@@ -1,13 +1,10 @@
 import React, { useState } from "react";
 import { EmojioneV4 } from "react-emoji-render";
 
-import "./App.css";
-import "bootstrap/dist/css/bootstrap.min.css";
-import "bootstrap/dist/js/bootstrap.min.js";
-import "jquery/dist/jquery.min.js";
-import "popper.js/dist/popper.min.js";
-
+// Page components
+import Header from "./components/Header";
 import Details from "./components/Details";
+import Footer from "./components/Footer";
 
 function App() {
     const [loading, setLoading] = useState(false); // Is the data loading?
@@ -15,17 +12,22 @@ function App() {
     const [breweries, setBreweries] = useState([]); // Array of breweries that will be set after fetching
     const [emptyResult, setEmptyResult] = useState(false); // Is the fetch result empty?
 
+    /**
+     * Query for the breweries from the Open Brewery DB API and set those results
+     * inside the state (breweries).
+     */
     const getBreweries = () => {
         fetch(`https://api.openbrewerydb.org/breweries/search?query=${input}`)
             .then((response) => response.json())
             .then((data) => {
                 setLoading(true);
                 setTimeout(function () {
+                    // If the response of the data array is empty
                     if (data.length < 1) {
                         setEmptyResult(true); // NO results for the query
                     }
-                    setBreweries(data);
-                    setLoading(false);
+                    setBreweries(data); // Set the breweries array from the response
+                    setLoading(false); // Set the loading state back to false
                 }, 500);
             })
             .catch((error) => {
@@ -34,13 +36,17 @@ function App() {
             });
     };
 
-    // Handle clearing the search input, the results displayed, and the empty result state.
+    /**
+     * Handle clearing the results. Clears up the state for
+     * the breweries array, the results boolean, and the input string.
+     */
     const handleClearingResults = () => {
         setBreweries([]);
         setEmptyResult(false);
         setInput("");
     };
 
+    // Display the breweries as list item in alphabetical order by name of brewery.
     const breweriesArr = breweries
         .sort(function (a, b) {
             if (a.name < b.name) {
@@ -76,20 +82,15 @@ function App() {
                         </p>
                     </div>
                 </li>
+                {/* Show more details about the brewery (address, number, website) */}
                 <Details brewery={brewery} />
             </>
         ));
 
     return (
         <>
+            <Header />
             <main>
-                <div className='d-flex flex-row justify-content-center align-items-center pt-4'>
-                    <h1 id='siteTitle' className='mt-1'>
-                        Open Brewery React
-                    </h1>
-                    {/* <i className='fa fa-beer fa-3x ml-3'></i> */}
-                    <EmojioneV4 style={{ fontSize: "3em" }} text=':beer:' />
-                </div>
                 <p className='text-center my-0'>
                     Search for breweries based off keywords.
                 </p>
@@ -124,59 +125,21 @@ function App() {
                     </div>
                 </div>
                 <div className='results-container'>
+                    {/* While the data is loading */}
                     {loading && (
                         <div className='spinner-border' role='status'>
                             <span className='sr-only'>Loading...</span>
                         </div>
                     )}
+                    {/* If there are results for the search query */}
                     <ul className='list'>{breweries && breweriesArr}</ul>
+                    {/* If there are no results for the search query  */}
                     {emptyResult === true && (
                         <p className='lead text-center'>NO RESULTS</p>
                     )}
                 </div>
             </main>
-            <footer className='my-4'>
-                <p className='text-center my-0'>
-                    Credit to{" "}
-                    <a
-                        href='https://chrisjmears.com/'
-                        target='_blank'
-                        rel='noopener noreferrer'
-                    >
-                        Chris J Mears
-                    </a>{" "}
-                    and{" "}
-                    <a
-                        href='https://wanderingleafstudios.com/'
-                        target='_blank'
-                        rel='noopener noreferrer'
-                    >
-                        Wandering Leaf Studios LLC
-                    </a>{" "}
-                    for the{" "}
-                    <a
-                        href='https://www.openbrewerydb.org/'
-                        target='_blank'
-                        rel='noreferrer noopener'
-                    >
-                        Open Brewery DB API
-                    </a>
-                    .
-                </p>
-                <div className='d-flex justify-content-center my-0'>
-                    <p>View the code for this project on </p>
-                    <a
-                        href='https://github.com/ramos07/OpenBreweryReactApp'
-                        target='_blank'
-                        rel='noopener noreferrer'
-                    >
-                        <i
-                            className='fab fa-github fa-lg mx-2'
-                            style={{ color: "#032535" }}
-                        ></i>
-                    </a>
-                </div>
-            </footer>
+            <Footer />
         </>
     );
 }
