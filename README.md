@@ -20,7 +20,7 @@
 ### Want to change it up? :computer:
 
 1.  ```bash
-    git clone https://github.com/ramos07/OpenBreweryReactApp.git
+    git clone https://github.com/ramos07/Open-Brewery-React.git
     ```
 2.  ```bash
     npm install
